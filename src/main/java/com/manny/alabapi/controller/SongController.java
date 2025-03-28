@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/songs")
-@CrossOrigin(origins = "https://manuelpiano.github.io")
+@CrossOrigin(origins = {"https://manuelpiano.github.io", "http://localhost:4200"})
 public class SongController {
     private final SongService songService;
     public SongController(SongService songService) {
