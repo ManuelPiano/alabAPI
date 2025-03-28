@@ -21,15 +21,6 @@ public class SongService {
     public Optional<songs> getSongById(Long id) {
         return songRepo.findById(id);
     }
-    public songs createSong(songs newSong) { return songRepo.save(newSong);}
-    public songs updateSong(Long id, songs updatedSong) {
-        return songRepo.findById(id).map(song -> {
-            song.setTitle(updatedSong.getTitle());
-            song.setAuthor(updatedSong.getAuthor());
-            song.setLyrics(updatedSong.getLyrics());
-            song.setActive(updatedSong.isActive());
-            return songRepo.save(song);
-        }).orElseThrow(() -> new RuntimeException("Song not found with id " + id));
-    }
+
 
 }

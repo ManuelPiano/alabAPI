@@ -27,42 +27,4 @@ public class SongController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-    @PostMapping("/create")
-    public ResponseEntity<songs> createSong(
-            @RequestParam String title,
-            @RequestParam String author,
-            @RequestParam String lyrics,
-            @RequestParam boolean active){
-        try{
-            songs newSong = new songs();
-            newSong.setTitle(title);
-            newSong.setAuthor(author);
-            newSong.setLyrics(lyrics);
-            newSong.setActive(active);
-            songs createSong = songService.createSong(newSong);
-            return ResponseEntity.ok(createSong);
-        } catch (Exception e) {
-            return ResponseEntity.status(500).build();
-        }
-    }
-
-    @PutMapping("/update/{id}")
-    public ResponseEntity<songs> updateSong(
-            @PathVariable Long id,
-            @RequestParam String title,
-            @RequestParam String author,
-            @RequestParam String lyrics,
-            @RequestParam boolean active) {
-        try {
-            songs updatedSong = new songs();
-            updatedSong.setTitle(title);
-            updatedSong.setAuthor(author);
-            updatedSong.setLyrics(lyrics);
-            updatedSong.setActive(active);
-            songs song = songService.updateSong(id, updatedSong);
-            return ResponseEntity.ok(song);
-        } catch (Exception e) {
-            return ResponseEntity.status(500).build();
-        }
-    }
 }
