@@ -10,10 +10,12 @@ import lombok.Setter;
 @Setter
 public class songs {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String author;
     @Column(columnDefinition = "TEXT")
     private String lyrics;
+    private boolean active;
+
 }
