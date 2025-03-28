@@ -1,7 +1,7 @@
-package com.manny.alabanzasapi.controller;
+package com.manny.alabapi.controller;
 
-import com.manny.alabanzasapi.entity.songs;
-import com.manny.alabanzasapi.service.SongService;
+import com.manny.alabapi.entity.songs;
+import com.manny.alabapi.service.SongService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

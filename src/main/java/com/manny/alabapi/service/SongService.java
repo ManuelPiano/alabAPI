@@ -1,7 +1,7 @@
-package com.manny.alabanzasapi.service;
+package com.manny.alabapi.service;
 
-import com.manny.alabanzasapi.entity.songs;
-import com.manny.alabanzasapi.repo.SongRepo;
+import com.manny.alabapi.entity.songs;
+import com.manny.alabapi.repo.SongRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,4 +21,6 @@ public class SongService {
     public Optional<songs> getSongById(Long id) {
         return songRepo.findById(id);
     }
+
+
 }

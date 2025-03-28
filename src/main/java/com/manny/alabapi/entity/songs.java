@@ -1,4 +1,4 @@
-package com.manny.alabanzasapi.entity;
+package com.manny.alabapi.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
