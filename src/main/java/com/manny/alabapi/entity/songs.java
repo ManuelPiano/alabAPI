@@ -17,5 +17,7 @@ public class songs {
     @Column(columnDefinition = "TEXT")
     private String lyrics;
     private boolean active;
+    private boolean ofrenda;
+    private boolean comodin;
 
 }

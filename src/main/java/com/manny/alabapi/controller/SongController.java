@@ -32,13 +32,18 @@ public class SongController {
             @RequestParam String title,
             @RequestParam String author,
             @RequestParam String lyrics,
-            @RequestParam boolean active){
+            @RequestParam boolean active,
+            @RequestParam boolean ofrenda,
+            @RequestParam boolean comodin
+    ){
         try{
             songs newSong = new songs();
             newSong.setTitle(title);
             newSong.setAuthor(author);
             newSong.setLyrics(lyrics);
             newSong.setActive(active);
+            newSong.setOfrenda(ofrenda);
+            newSong.setComodin(comodin);
             songs createSong = songService.createSong(newSong);
             return ResponseEntity.ok(createSong);
         } catch (Exception e) {
@@ -52,13 +57,18 @@ public class SongController {
             @RequestParam String title,
             @RequestParam String author,
             @RequestParam String lyrics,
-            @RequestParam boolean active) {
+            @RequestParam boolean active,
+            @RequestParam boolean ofrenda,
+            @RequestParam boolean comodin
+            ) {
         try {
             songs updatedSong = new songs();
             updatedSong.setTitle(title);
             updatedSong.setAuthor(author);
             updatedSong.setLyrics(lyrics);
             updatedSong.setActive(active);
+            updatedSong.setOfrenda(ofrenda);
+            updatedSong.setComodin(comodin);
             songs song = songService.updateSong(id, updatedSong);
             return ResponseEntity.ok(song);
         } catch (Exception e) {

@@ -29,6 +29,8 @@ public class SongService {
             song.setAuthor(updatedSong.getAuthor());
             song.setLyrics(updatedSong.getLyrics());
             song.setActive(updatedSong.isActive());
+            song.setOfrenda(updatedSong.isOfrenda());
+            song.setComodin(updatedSong.isComodin());
             return songRepo.save(song);
         }).orElseThrow(() -> new RuntimeException("Song not found with id " + id));
     }
